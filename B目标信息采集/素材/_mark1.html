@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FFUF.me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="MockTerminal/style.css">
+    <script src="MockTerminal/script.js"></script>
+    <script src="script.js"></script>
+<style>
+body{font-size:15px}
+.badge{display:inline-block;min-width:22px;height:22px;text-align:center;
+  background:#c00000;color:#fff;border-radius:50%;font:bold 13px/22px Consolas,monospace;
+  margin-left:10px;vertical-align:2px}
+h3.z{border-left:4px solid #c00000;padding-left:8px}
+.excl a{color:#b0b0b0 !important;text-decoration:line-through}
+ul{background:#fff8f8;padding:8px 6px;border:1px dashed #e0b4b4}
+.welcome{border-width:2px !important}
+</style></head>
+<body>
+<div class="content" style="margin-top:28px">
+    <h1><a href="/">FFUF.me</a></h1>
+    <h2 style="margin: 0;padding: 0">For FFUF Target Practice <span class="badge">1</span></h2>
+    <div class="text-center"><a href="/about">About</a> | <a href="/help">Help</a> | <a href="/credits">Credits</a> <span class="badge">2</span></div>
+    <div class="welcome text-center" style="margin-top:20px;background-color: #e76c6c">
+        <p>Before you start make sure you download the required <a href="/wordlists">wordlists</a> first <span class="badge">3</span></p>
+    </div>
+
+    <h3 class="z">Installation Instructions <span class="badge">4</span></h3>
+    <ul>
+        <li><a href="/install">How To Install</a></li>
+    </ul>
+
+    <h3 class="z">Content Discovery <span class="badge">5</span></h3>
+    <ul>
+        <li><a href="/cd/basic">Basic Content Discovery</a></li>
+        <li><a href="/cd/recursion">Content Discovery With Recursion</a></li>
+        <li><a href="/cd/ext">Content Discovery With File Extensions</a></li>
+        <li><a href="/cd/no404">No 404 Status</a></li>
+        <li><a href="/cd/param">Param Mining</a></li>
+        <li class="excl"><a href="/cd/rate">Rate Limited</a></li>
+        <li><a href="/cd/pipes">Pipes</a></li>
+    </ul>
+    <h3 class="z">Subdmain Enumeration <span class="badge">6</span></h3>
+    <ul>
+        <li><a href="/sub/vhost">Virtual Host Discovery</a></li>
+    </ul>
+</div>
+</body>
+</html>

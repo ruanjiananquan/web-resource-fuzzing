@@ -1,0 +1,69 @@
+B 阶段证据自检报告
+============================================================
+首页文件：素材\homepage.html（41 行，1493 字节）
+页面中 href/src 引用共 18 条
+
+[1] seeds.txt 逐词回查（不区分大小写）
+共 18 个词
+  OK   install      行 20,22
+  OK   cd           行 27,28,29,30,31,32,33
+  OK   basic        行 27
+  OK   recursion    行 28
+  OK   ext          行 15,16,29
+  OK   no404        行 30
+  OK   param        行 31
+  OK   pipes        行 33
+  OK   sub          行 35,37
+  OK   vhost        行 37
+  OK   wordlists    行 17
+  OK   about        行 15
+  OK   help         行 15
+  OK   credits      行 15
+  OK   discovery    行 25,27,28,29,37
+  OK   enumeration  行 35
+  OK   subdmain     行 35
+  OK   MockTerminal 行 7,8
+
+[2] 词语来源表.xlsx 的“页面原文 / 所属路径”逐条回查
+  OK   install      2 个片段全部命中
+  INFO cd           该行未给出 HTML 片段，仅有路径/位置描述
+  OK   basic        1 个片段全部命中
+  OK   recursion    1 个片段全部命中
+  OK   ext          1 个片段全部命中
+  OK   no404        1 个片段全部命中
+  OK   param        1 个片段全部命中
+  OK   pipes        1 个片段全部命中
+  INFO sub          该行未给出 HTML 片段，仅有路径/位置描述
+  OK   vhost        1 个片段全部命中
+  OK   wordlists    1 个片段全部命中
+  OK   about        1 个片段全部命中
+  OK   help         1 个片段全部命中
+  OK   credits      1 个片段全部命中
+  OK   discovery    1 个片段全部命中
+  OK   enumeration  1 个片段全部命中
+  OK   subdmain     1 个片段全部命中
+  OK   MockTerminal 2 个片段全部命中
+
+[3] 公开路径清单.xlsx 逐条回查（相对路径按首页 URL 解析）
+  OK   /                          原文引用 href/src="/"
+  OK   /about                     原文引用 href/src="/about"
+  OK   /help                      原文引用 href/src="/help"
+  OK   /credits                   原文引用 href/src="/credits"
+  OK   /wordlists                 原文引用 href/src="/wordlists"
+  OK   /install                   原文引用 href/src="/install"
+  OK   /cd/basic                  原文引用 href/src="/cd/basic"
+  OK   /cd/recursion              原文引用 href/src="/cd/recursion"
+  OK   /cd/ext                    原文引用 href/src="/cd/ext"
+  OK   /cd/no404                  原文引用 href/src="/cd/no404"
+  OK   /cd/param                  原文引用 href/src="/cd/param"
+  OK   /cd/rate                   原文引用 href/src="/cd/rate"
+  OK   /cd/pipes                  原文引用 href/src="/cd/pipes"
+  OK   /sub/vhost                 原文引用 href/src="/sub/vhost"
+  OK   /style.css                 原文引用为相对路径 "style.css"，解析后即 /style.css
+  OK   /script.js                 原文引用为相对路径 "script.js"，解析后即 /script.js
+  OK   /MockTerminal/style.css    原文引用为相对路径 "MockTerminal/style.css"，解析后即 /MockTerminal/style.css
+  OK   /MockTerminal/script.js    原文引用为相对路径 "MockTerminal/script.js"，解析后即 /MockTerminal/script.js
+
+------------------------------------------------------------
+通过 52 项，失败 0 项
+结论：所有条目都能在首页 HTML 中逐字查到，可交付。

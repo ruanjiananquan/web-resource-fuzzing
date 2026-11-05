@@ -1,0 +1,74 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+body{margin:0;padding:26px;background:#fff;font-family:'Microsoft YaHei','Segoe UI',Arial}
+h3{margin:0 0 6px;font-size:19px;color:#222}
+.sub{color:#777;font-size:13px;margin-bottom:16px}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{background:#f2f2f2;border:1px solid #ccc;padding:8px 10px;text-align:left;font-weight:600}
+td{border:1px solid #ddd;padding:7px 10px;vertical-align:middle}
+.no{width:34px;text-align:center;color:#888}
+.path{font-family:Consolas,monospace;font-size:15px;width:210px}
+.seg1{background:#ffe0e0;color:#a00000;padding:1px 2px;border-radius:2px}
+.seg2{background:#e0ecff;color:#00379c;padding:1px 2px;border-radius:2px}
+.sl{color:#999}
+.w{font-family:Consolas,monospace;width:210px}
+.w1{background:#ffe0e0;color:#a00000;padding:1px 3px;border-radius:2px}
+.w2{background:#e0ecff;color:#00379c;padding:1px 3px;border-radius:2px}
+.nx{color:#c00000;font-family:'Microsoft YaHei'}
+.note{margin-top:14px;font-size:12.5px;color:#666;line-height:1.7}
+</style></head><body>
+<h3>首页链接路径的片段拆分（/cd/* 与 /sub/* 两组）</h3>
+<div class="sub">红＝目录片段，蓝＝叶子片段；两种片段都作为目标词提取，完整路径另记入公开路径清单</div>
+<table>
+<tr><th>#</th><th>页面中的路径</th><th>链接文字</th><th>提取目标词</th></tr>
+<tr>
+    <td class="no">1</td>
+    <td class="path"><span class="seg1">/cd</span><span class="sl">/</span><span class="seg2">basic</span></td>
+    <td>Basic Content Discovery</td>
+    <td class="w"><span class="w1">cd</span> + <span class="w2">basic</span></td>
+  </tr>
+<tr>
+    <td class="no">2</td>
+    <td class="path"><span class="seg1">/cd</span><span class="sl">/</span><span class="seg2">recursion</span></td>
+    <td>Content Discovery With Recursion</td>
+    <td class="w"><span class="w1">cd</span> + <span class="w2">recursion</span></td>
+  </tr>
+<tr>
+    <td class="no">3</td>
+    <td class="path"><span class="seg1">/cd</span><span class="sl">/</span><span class="seg2">ext</span></td>
+    <td>Content Discovery With File Extensions</td>
+    <td class="w"><span class="w1">cd</span> + <span class="w2">ext</span></td>
+  </tr>
+<tr>
+    <td class="no">4</td>
+    <td class="path"><span class="seg1">/cd</span><span class="sl">/</span><span class="seg2">no404</span></td>
+    <td>No 404 Status</td>
+    <td class="w"><span class="w1">cd</span> + <span class="w2">no404</span></td>
+  </tr>
+<tr>
+    <td class="no">5</td>
+    <td class="path"><span class="seg1">/cd</span><span class="sl">/</span><span class="seg2">param</span></td>
+    <td>Param Mining</td>
+    <td class="w"><span class="w1">cd</span> + <span class="w2">param</span></td>
+  </tr>
+<tr style="opacity:.45">
+    <td class="no">6</td>
+    <td class="path"><span class="seg1">/cd</span><span class="sl">/</span><span class="seg2">rate</span></td>
+    <td>Rate Limited</td>
+    <td class="w"><span class="w1">cd</span> + <span class="w2">rate</span> <b class="nx">（不进入候选）</b></td>
+  </tr>
+<tr>
+    <td class="no">7</td>
+    <td class="path"><span class="seg1">/cd</span><span class="sl">/</span><span class="seg2">pipes</span></td>
+    <td>Pipes</td>
+    <td class="w"><span class="w1">cd</span> + <span class="w2">pipes</span></td>
+  </tr>
+<tr>
+    <td class="no">8</td>
+    <td class="path"><span class="seg1">/sub</span><span class="sl">/</span><span class="seg2">vhost</span></td>
+    <td>Virtual Host Discovery</td>
+    <td class="w"><span class="w1">sub</span> + <span class="w2">vhost</span></td>
+  </tr>
+</table>
+<div class="note">注：第 6 行 /cd/rate 属限速练习，按统一边界排除，不提取为候选；<br>
+其余 7 条路径中的 cd、sub 为目录片段（复用出现 7 次 / 1 次），basic、recursion、ext、no404、param、pipes、vhost 为叶子片段。</div>
+</body></html>
