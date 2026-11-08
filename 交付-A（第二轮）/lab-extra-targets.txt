@@ -1,0 +1,16 @@
+# 补充测试集 · 完整目标清单（A 与 E 双保管，B/C/D 冻结前不可见）
+# 扫描根：http://127.0.0.1:18081/lab-extra/
+# 8 个实际存在目标（均返回 200，各有独立正文标记）：
+/lab-extra/materials.txt        WEBFUZZ-EXTRA-01
+/lab-extra/course.html          WEBFUZZ-EXTRA-02
+/lab-extra/downloads.txt        WEBFUZZ-EXTRA-03
+/lab-extra/notice.html          WEBFUZZ-EXTRA-04
+/lab-extra/help.txt             WEBFUZZ-EXTRA-05
+/lab-extra/contact.html         WEBFUZZ-EXTRA-06
+/lab-extra/legacy-console.html  WEBFUZZ-EXTRA-07
+/lab-extra/maintenance-2024.txt WEBFUZZ-EXTRA-08
+# 3 个不存在路径（用于 404 预检与错误响应对照）：
+/lab-extra/nope1
+/lab-extra/nope2
+/lab-extra/nope3
+# 核验方式：GET 上述 8 个路径，确认状态码 200 且响应正文包含对应标记。
