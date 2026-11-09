@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""功能：按阶段指南排序，只生成两份完整字典和两份前1000项字典。
-写法：只用Python标准库，不发送请求；输入沿用B、C原件，不重复提交。
-"""
+
 import argparse
 import csv
 import random
@@ -13,7 +11,7 @@ from pathlib import Path
 
 
 def source_words(path):
-    """功能：读取 B 的目标词工作表。写法：把 xlsx 当作 XML 压缩包，只读取值。"""
+    """读取 B 的目标词工作表"""
     ns = {'s': 'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
     rns = '{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id'
     with zipfile.ZipFile(path) as z:
@@ -47,7 +45,7 @@ def source_words(path):
 
 
 def level(record, sources):
-    """功能：为单条来源记录分层。必须先判断扩展，避免继承父词标签导致错误提级。"""
+    """为单条来源记录分层"""
     expanded = record['是否扩展']
     if expanded == '是': return 3
     if expanded != '否': raise ValueError('不明确的扩展标记：' + str(record))
@@ -64,10 +62,10 @@ def level(record, sources):
 
 
 def main():
-    """功能：核对候选来源，固定规则和随机种子，只输出指南要求的四份字典。"""
+    """核对候选来源，固定规则和随机种子，输出四份字典。"""
     root = Path(__file__).resolve().parent
     parser = argparse.ArgumentParser(description=__doc__)
-    # 功能：通过参数指定B、C的原文件位置，避免复制输入到交付文件夹。
+
     parser.add_argument('--candidates', type=Path, default=root/'candidates.txt')
     parser.add_argument('--provenance', type=Path, default=root/'候选来源表.csv')
     parser.add_argument('--sources', type=Path, default=root/'词语来源表.xlsx')
@@ -90,10 +88,10 @@ def main():
         for row in csv.DictReader(f): records[row['候选']].append(row)
     if set(records)!=set(candidates):
         raise ValueError('来源表与候选集合不一致')
-    # 功能：多来源候选取最高优先级；同层按长度、字符序排列，保留大小写。
+    # 多来源候选取最高优先级；同层按长度、字符序排列，保留大小写。
     levels={x:min(level(r,sources) for r in records[x]) for x in candidates}
     ranked=sorted(candidates,key=lambda x:(levels[x],len(x),x))
-    # 功能：固定初始顺序与随机种子2026，保证同样输入能重现随机对照。
+    # 固定初始顺序与随机种子2026，保证同样输入能重现随机对照。
     shuffled=sorted(candidates)
     random.Random(2026).shuffle(shuffled)
     if set(ranked)!=set(shuffled): raise ValueError('两份完整集合不一致')
@@ -103,7 +101,7 @@ def main():
         (args.output_dir/name).write_text('\n'.join(words)+'\n',encoding='utf-8')
     print('完整集合一致；候选共',len(candidates),'项。')
     print('四层数量：',*[sum(v==i for v in levels.values()) for i in (1,2,3,4)])
-    print('已生成两份完整排序字典、两份前1000项字典。尚未执行ffuf测试。')
+    print('已生成两份完整排序字典、两份前1000项字典。')
 
 
 if __name__=='__main__':
