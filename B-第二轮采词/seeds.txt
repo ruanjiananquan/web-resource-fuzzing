@@ -1,0 +1,6 @@
+course
+materials
+downloads
+notice
+help
+contact
