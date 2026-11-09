@@ -1,0 +1,9 @@
+真实输入词：course
+来源：B组seeds.txt；页面原文为Course（课程大纲与教学安排）。
+原词保留：course
+简单单复数扩展：courses（不以s结尾，追加s）。
+文件后缀扩展：course.txt、course.html。
+API前缀扩展：api/course。
+拼写纠正规则：若原词为subdmain，额外记录subdomain，原词保留。
+本轮种子均为小写，因此不额外产生大小写转换候选。
+候选不代表路径真实存在；本脚本只生成文件，不发送HTTP请求。

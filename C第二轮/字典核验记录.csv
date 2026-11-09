@@ -1,0 +1,4 @@
+﻿文件,项数,空行数,重复数,SHA-256
+baseline_1000.txt,1000,0,0,ead43e85438ad022ce1cb8cbd294078ba181184b5e47b7352b5d8712b76a3790
+baseline_plus_seeds.txt,1006,0,0,5a7d95f372c84c8377a8a4e57ab0acbd69d2a09d5423aaf22b33bc3c57ae87fc
+expanded_original.txt,1030,0,0,fda3678650aabf676d806c561a02e51e35a1a6e3f5405cbfca1e66a1096ace50
