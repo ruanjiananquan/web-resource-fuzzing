@@ -1,0 +1,5 @@
+﻿group,dictionary,candidates,server_scan_requests,output_count,target_hits,coverage,non_target_responses,at100,at300,at1000,first_hit,last_hit,elapsed_seconds
+baseline,baseline_1000.txt,1000,1000,3,0,0.0,3,0,0,0,,,50.063
+e_seeds,baseline_plus_seeds.txt,1006,1006,3,0,0.0,3,0,0,0,,,50.437
+e_expanded,expanded_original.txt,1030,1030,9,6,0.75,3,6,6,6,4,29,51.563
+ranked,ranked_full.txt,1030,1030,9,6,0.75,3,6,6,6,13,28,51.563
